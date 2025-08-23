@@ -1,0 +1,10 @@
+local scripts = {
+    [18714406809] = "https://raw.githubusercontent.com/theonlyv1z/scripts/refs/heads/main/rotm",    -- Realms of The Multiverse
+    [12691971351] = "https://raw.githubusercontent.com/theonlyv1z/scripts/refs/heads/main/charmed", -- Charmed: Reborn
+}
+
+--universal script
+local universal = "https://raw.githubusercontent.com/theonlyv1z/scripts/refs/heads/main/universal"
+
+local url = scripts[game.PlaceId] or universal
+loadstring(game:HttpGet(url, true))()
