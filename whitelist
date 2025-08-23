@@ -1,4 +1,3 @@
--- Whitelisted HWIDs
 return {
     "hwid-test-xyz",
     "5E9E936F-1D71-4E23-B9A3-6ED9E28D8848",
