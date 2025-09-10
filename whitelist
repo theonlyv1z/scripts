@@ -1,6 +1,3 @@
 return {
-    "hwid-test",
-    "590A62AC-85C6-4E16-A872-58496274489A",
-    "f28dab3d-4fe4-456a-acdf-f0ee41f5a752",
-    "9E6EF2BA-8180-43CC-A020-505A9E4B23F7"
+    "hwid-test"
 }
