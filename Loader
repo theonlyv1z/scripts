@@ -4,7 +4,7 @@ local scripts = {
 }
 
 local tvlIDs = {10561456271, 10561482233, 10561483644, 10561484691}
-local tvlScript = "https://raw.githubusercontent.com/theonlyv1z/scripts/refs/heads/main/tvl"
+local tvlScript = "https://raw.githubusercontent.com/theonlyv1z/scripts/refs/heads/main/tvl" -- The Vampire Legends 2
 
 for _, id in ipairs(tvlIDs) do
     scripts[id] = tvlScript
