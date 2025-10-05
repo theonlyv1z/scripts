@@ -1,4 +1,8 @@
 return {
-    "951B336C-CA0B-4463-A378-67BCF19C289A",
-    "C070AE57-60A2-4855-91B0-F35F25C4DD88"
+    hwids = {
+
+    },
+    tiers = {
+
+    }
 }
