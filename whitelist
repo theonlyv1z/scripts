@@ -1,8 +1,8 @@
 return {
     hwids = {
-
+    "951B336C-CA0B-4463-A378-67BCF19C289A"
     },
     tiers = {
-
+    ["951B336C-CA0B-4463-A378-67BCF19C289A"] = "premium"
     }
 }
