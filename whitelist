@@ -7,6 +7,6 @@ return {
     tiers = {
     ["C070AE57-60A2-4855-91B0-F35F25C4DD88"] = "premium",
     ["D2EC9017-75F8-4C61-9F9E-D1DB82BD3A5B"] = "normal",
-    ["15FD4800-32C0-426B-A5AC-4A56AE4DA239"] = "normal"
+    ["15FD4800-32C0-426B-A5AC-4A56AE4DA239"] = "premium"
     }
 }
