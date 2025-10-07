@@ -7,7 +7,8 @@ if not game:IsLoaded() then
     end)
 end
 
-local OMEGA_GAME_ID = 109629391874197
+-- Some users may provide a PlaceId; support both GameId and PlaceId
+local OMEGA_ID = 109629391874197
 local TVL_PLACE_IDS = { 10561483644, 10561484691, 10561482233 }
 
 local OMEGA_URL = "https://raw.githubusercontent.com/theonlyv1z/scripts/refs/heads/main/omega"
@@ -22,20 +23,40 @@ local function arrayContains(t, v)
     return false
 end
 
+local function httpGet(url)
+    -- Try executor-provided HTTP first
+    local req = (syn and syn.request) or (http and http.request) or http_request or request
+    if req then
+        local ok, res = pcall(function()
+            return req({ Url = url, Method = "GET" })
+        end)
+        if ok and res and (res.StatusCode == nil or (res.StatusCode >= 200 and res.StatusCode < 300)) and res.Body then
+            return res.Body
+        end
+        if ok and res and res.Body then
+            return res.Body
+        end
+    end
+    -- Fallback to Roblox HttpGet (often allowed in executors)
+    return game:HttpGet(url, true)
+end
+
 local function runRemote(url)
     local ok, err = pcall(function()
-        loadstring(game:HttpGet(url, true))()
+        local src = httpGet(url)
+        local f, ferr = loadstring(src)
+        if not f then error(ferr or "Compilation failed") end
+        f()
     end)
     if not ok then
         LocalPlayer:Kick("Loader error: " .. tostring(err))
     end
 end
 
-if game.GameId == OMEGA_GAME_ID then
+if game.GameId == OMEGA_ID or game.PlaceId == OMEGA_ID then
     runRemote(OMEGA_URL)
 elseif arrayContains(TVL_PLACE_IDS, game.PlaceId) then
     runRemote(TVL_URL)
 else
     LocalPlayer:Kick("Unsupported game for this loader.")
 end
-
