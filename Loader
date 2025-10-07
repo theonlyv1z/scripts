@@ -1,0 +1,41 @@
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer or Players.PlayerAdded:Wait()
+
+if not game:IsLoaded() then
+    pcall(function()
+        game.Loaded:Wait()
+    end)
+end
+
+local OMEGA_GAME_ID = 109629391874197
+local TVL_PLACE_IDS = { 10561483644, 10561484691, 10561482233 }
+
+local OMEGA_URL = "https://raw.githubusercontent.com/theonlyv1z/scripts/refs/heads/main/omega"
+local TVL_URL = "https://raw.githubusercontent.com/theonlyv1z/scripts/refs/heads/main/tvl"
+
+local function arrayContains(t, v)
+    for i = 1, #t do
+        if t[i] == v then
+            return true
+        end
+    end
+    return false
+end
+
+local function runRemote(url)
+    local ok, err = pcall(function()
+        loadstring(game:HttpGet(url, true))()
+    end)
+    if not ok then
+        LocalPlayer:Kick("Loader error: " .. tostring(err))
+    end
+end
+
+if game.GameId == OMEGA_GAME_ID then
+    runRemote(OMEGA_URL)
+elseif arrayContains(TVL_PLACE_IDS, game.PlaceId) then
+    runRemote(TVL_URL)
+else
+    LocalPlayer:Kick("Unsupported game for this loader.")
+end
+
