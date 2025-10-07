@@ -7,7 +7,6 @@ if not game:IsLoaded() then
     end)
 end
 
--- Some users may provide a PlaceId; support both GameId and PlaceId
 local OMEGA_ID = 109629391874197
 local TVL_PLACE_IDS = { 10561483644, 10561484691, 10561482233 }
 
@@ -24,7 +23,6 @@ local function arrayContains(t, v)
 end
 
 local function httpGet(url)
-    -- Try executor-provided HTTP first
     local req = (syn and syn.request) or (http and http.request) or http_request or request
     if req then
         local ok, res = pcall(function()
@@ -37,7 +35,6 @@ local function httpGet(url)
             return res.Body
         end
     end
-    -- Fallback to Roblox HttpGet (often allowed in executors)
     return game:HttpGet(url, true)
 end
 
