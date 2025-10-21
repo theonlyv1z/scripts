@@ -3,12 +3,14 @@ return {
     "C070AE57-60A2-4855-91B0-F35F25C4DD88",
     "D2EC9017-75F8-4C61-9F9E-D1DB82BD3A5B",
     "15FD4800-32C0-426B-A5AC-4A56AE4DA239",
-    "7a961a78-f60a-4b5c-88a3-ebbe61189775"
+    "7a961a78-f60a-4b5c-88a3-ebbe61189775",
+    "27e71d35-cc00-4592-9af9-bc8405242258"
     },
     tiers = {
     ["C070AE57-60A2-4855-91B0-F35F25C4DD88"] = "premium",
     ["D2EC9017-75F8-4C61-9F9E-D1DB82BD3A5B"] = "premium",
     ["15FD4800-32C0-426B-A5AC-4A56AE4DA239"] = "premium",
-    ["7a961a78-f60a-4b5c-88a3-ebbe61189775"] = "premium"
+    ["7a961a78-f60a-4b5c-88a3-ebbe61189775"] = "premium",
+    ["27e71d35-cc00-4592-9af9-bc8405242258"] = "premium"
     }
 }
