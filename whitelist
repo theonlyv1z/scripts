@@ -1,8 +1,9 @@
 return {
     hwids = {
-
+    "hwids = {"
     },
     tiers = {
-
+    ["hwids = {"] = "normal",
+    ["v"] = "normal"
     }
 }
